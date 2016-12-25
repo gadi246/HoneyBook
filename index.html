@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HoneyBook</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/spinner.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="MainCtrl">
+<div class="container">
+  <h2>Contact List</h2>
+  <header>
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+          <input type="search" class="form-control" placeholder="Search Contacts...">
+        </div>
+      </div>
+    </div>
+  </header>
+  </div>
+<!-- spinner -->
+<div class="spinner" ng-show="showSpinner">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+</div>
+<!-- main content -->
+  <main class="main" ng-cloak>
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-3" ng-repeat="contact in contacts">
+        <div class="thumbnail">
+          <div class="mask"><img ng-src="{{ contact.profile_image }}" alt="profile image"></div>
+          <div class="caption">
+            <img src="{{ contact.icon }}" alt="icon" class="icon">
+            <h3>{{ contact.name }}</h3>
+            <p>{{ contact.job}} | {{ contact.company_name}}</p>
+              <p class="full-detail">{{contact.phone}} <br> {{contact.email}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+<script src="node_modules/angular/angular.js"></script>
+<script src="app/app.js"></script>
+<script src="services/data.js"></script>
+</body>
+</html>
