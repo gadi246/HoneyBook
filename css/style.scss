@@ -1,5 +1,14 @@
 // === general style ===
-
+.search-form {
+  margin-top: 20px;
+  position: relative;
+}
+.glyphicon-search {
+  position: absolute;
+  right:10px;
+  top: 10px;
+  color:#ccc;
+}
 .thumbnail {
   height: 340px !important;
   overflow: hidden;
